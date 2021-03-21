@@ -112,7 +112,7 @@ void InsertSort(int* a, int n) {
     }
    //if(C!= n-1) C -= n - 1;
 }
-void SelectSort(int* a, int n)   //сортировка прямым выбором
+void SelectSort(int* a, int n)   //пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ
 {
     int min, tmp;
     for (int i = 0; i < n - 1; i++) {
@@ -131,7 +131,7 @@ void SelectSort(int* a, int n)   //сортировка прямым выбором
     }
 }
 
-void BubbleSort(int* a, int n)//Сортировка методом пузырька
+void BubbleSort(int* a, int n)//пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
 {
     M = C = 0;
     for (int i = 0; i < n - 1; i++)
