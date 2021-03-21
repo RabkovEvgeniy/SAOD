@@ -8,10 +8,10 @@ int Bsearch2(int* a, int size, int element) {
     bool flag = 0;
     while (L<R)
     {
-        C++;
         int m = (L + R) / 2;
         if (a[m] < element) L = m + 1;
         else R = m;
+        C++;
     }
     if (a[R] == element) flag = 1;
     C++;
@@ -24,9 +24,13 @@ int Bsearch1(int* a, int size, int element) {
     bool flag = 0;
     while (L<=R)
     {
-        C=C+2;
+        C++;
         int m = (L + R) / 2;
-        if (a[m] == element) flag = 1;
+        if (a[m] == element) {
+            flag = 1;
+            break;
+        }
+        C++;
         if (a[m] < element) L = m + 1;
         else R = m - 1;
     }
