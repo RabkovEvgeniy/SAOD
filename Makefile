@@ -3,7 +3,7 @@ CFlags = -Wall -MMD -I src
 PObj = obj/
 PSrc = src/
 PBin = bin/
-EXEC= out
+EXEC=out
 Target = $(PBin)main7.$(EXEC)
 
 all: $(Target)
