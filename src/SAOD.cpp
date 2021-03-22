@@ -18,16 +18,18 @@ int Bsearch2(int *a, int size, int element) {
   if (a[R] == element)
     flag = 1;
   C++;
-  return flag;
+  if(flag) return R;
+  else return -1;
 }
 int Bsearch1(int *a, int size, int element) {
   C = 0;
   int L = 0;
   int R = size - 1;
   bool flag = 0;
+  int m;
   while (L <= R) {
     C++;
-    int m = (L + R) / 2;
+    m = (L + R) / 2;
     if (a[m] == element) {
       flag = 1;
       break;
@@ -38,7 +40,8 @@ int Bsearch1(int *a, int size, int element) {
     else
       R = m - 1;
   }
-  return flag;
+  if(flag) return m;
+  else return -1;
 }
 
 int knut(int l) {
