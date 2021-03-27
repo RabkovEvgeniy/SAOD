@@ -2,6 +2,28 @@
 
 extern int M, C;
 
+void HeapSort(int *arr, int size) {
+  int temp, j;
+  for (size_t i = size - 1; i > 0; i--) {
+    j = MaxHeap(arr, 0, i);
+    temp = arr[i];
+    arr[i] = arr[j];
+    arr[j] = temp;
+  }
+}
+
+int MaxHeap(int *arr, int L, int R) {
+  int max;
+  if (L * 2 + 1 > R)
+    return L;
+  if (L * 2 + 2 > R)
+    return arr[L] > arr[R] ? L : R;
+  max = arr[MaxHeap(arr, L * 2 + 1, R)] > arr[MaxHeap(arr, L * 2 + 2, R)]
+            ? MaxHeap(arr, L * 2 + 1, R)
+            : MaxHeap(arr, L * 2 + 2, R);
+  return arr[L] > arr[max] ? L : max;
+}
+
 int Bsearch2(int *a, int size, int element) {
   C = 0;
   int L = 0;
