@@ -3,8 +3,13 @@ CFlags = -Wall -MMD -I src
 PObj = obj/
 PSrc = src/
 PBin = bin/
+<<<<<<< HEAD
 EXEC=out
 Target = $(PBin)main7.$(EXEC)
+=======
+EXEC= out
+Target = $(PBin)main7.$(EXEC) $(PBin)main8.$(EXEC)
+>>>>>>> Написал ебучую пиромидальную сортировку(писал без псевдокода)
 
 all: $(Target)
 

@@ -4,6 +4,8 @@
 #include <time.h>
 
 using namespace std;
+int MaxHeap(int *arr, int L, int R);
+void HeapSort(int *arr, int size);
 void FillInc(int *, int);
 void FillDec(int *, int);
 int CheckSum(int *, int);
