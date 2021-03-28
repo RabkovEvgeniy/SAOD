@@ -4,8 +4,10 @@ extern int M, C;
 
 void HeapSort(int *arr, int size) {
   int temp, j;
-  for (size_t i = size - 1; i > 0; i--) {
+  for (int i = size - 1; i > 0; i--) {
     j = MaxHeap(arr, 0, i);
+    if (j == i)
+      continue;
     temp = arr[i];
     arr[i] = arr[j];
     arr[j] = temp;
