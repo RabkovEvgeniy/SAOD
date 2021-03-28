@@ -13,14 +13,14 @@ void HeapSort(int *arr, int size) {
 }
 
 int MaxHeap(int *arr, int L, int R) {
-  int max;
+  int max, a, b;
   if (L * 2 + 1 > R)
     return L;
   if (L * 2 + 2 > R)
     return arr[L] > arr[R] ? L : R;
-  max = arr[MaxHeap(arr, L * 2 + 1, R)] > arr[MaxHeap(arr, L * 2 + 2, R)]
-            ? MaxHeap(arr, L * 2 + 1, R)
-            : MaxHeap(arr, L * 2 + 2, R);
+  a = MaxHeap(arr, L * 2 + 1, R);
+  b = MaxHeap(arr, L * 2 + 2, R);
+  max = arr[a] > arr[b] ? a : b;
   return arr[L] > arr[max] ? L : max;
 }
 
@@ -40,8 +40,10 @@ int Bsearch2(int *a, int size, int element) {
   if (a[R] == element)
     flag = 1;
   C++;
-  if(flag) return R;
-  else return -1;
+  if (flag)
+    return R;
+  else
+    return -1;
 }
 int Bsearch1(int *a, int size, int element) {
   C = 0;
@@ -62,8 +64,10 @@ int Bsearch1(int *a, int size, int element) {
     else
       R = m - 1;
   }
-  if(flag) return m;
-  else return -1;
+  if (flag)
+    return m;
+  else
+    return -1;
 }
 
 int knut(int l) {
