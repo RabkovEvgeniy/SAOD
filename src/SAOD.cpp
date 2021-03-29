@@ -27,6 +27,25 @@ template <typename T> int MaxHeap(T *arr, int L, int R) {
   return arr[L] > arr[max] ? L : max;
 }
 
+template <typename T> int *GetPtrToSortedIndexArr(T *arr, int size) {
+  int *ptr = new int[size];
+  for (int i = 0; i < size; i++) {
+    ptr[i] = i;
+  }
+  int min;
+  int tmp;
+  for (int i = 0; i < size - 1; i++) {
+    min = i;
+    for (int j = i + 1; j < size; j++)
+      if (arr[ptr[j]] < arr[ptr[min]])
+        min = j;
+    tmp = ptr[i];
+    ptr[i] = ptr[min];
+    ptr[min] = tmp;
+  }
+  return ptr;
+}
+
 int Bsearch2(int *a, int size, int element) {
   C = 0;
   int L = 0;

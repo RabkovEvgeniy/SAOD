@@ -10,6 +10,8 @@ template <typename T> int MaxHeap(T *arr, int L, int R);
 
 template <typename T> void HeapSort(T *arr, int size);
 
+template <typename T> T *GetPtrToSortedIndexArr(T *arr, int size);
+
 void FillInc(int *, int);
 void FillDec(int *, int);
 int CheckSum(int *, int);

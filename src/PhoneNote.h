@@ -3,11 +3,13 @@
 #include <iostream>
 #include <string>
 
+using namespace std;
+
 class PhoneNote {
 public:
   enum KeysForSort { Number, Name, Age, Organizations };
 
-  PhoneNote(string number, string name, int age, string organizations);
+  PhoneNote();
 
   void edit_phone_note(string number, string name, int age,
                        string organizations);
@@ -19,7 +21,7 @@ public:
 
   static void set_key_for_sort(KeysForSort key);
 
-  bool operator<(&PhoneNote note);
+  bool operator<(PhoneNote &note);
 
 private:
   static KeysForSort key_for_sort;
