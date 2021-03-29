@@ -47,6 +47,6 @@ ostream &operator<<(ostream &os, PhoneNote &note) {
   cout << "Name: " << note.get_name() << endl;
   cout << "Number: " << note.get_number() << endl;
   cout << "Age: " << note.get_age() << endl;
-  cout << "Organizations " << note.get_organizations() << endl;
+  cout << "Organization: " << note.get_organizations() << endl;
   return os;
 }

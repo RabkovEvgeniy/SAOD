@@ -14,8 +14,10 @@ int main() {
   PhoneNote::set_key_for_sort(PhoneNote::Name);
   ptr1 = GetPtrToSortedIndexArr(arr, 5);
   PrintWhithIndesxMas(ptr1, arr, 5);
-  cout << "--------------------------------------" << endl;
+  cout << "------------------------" << endl << endl;
   PhoneNote::set_key_for_sort(PhoneNote::Age);
   ptr2 = GetPtrToSortedIndexArr(arr, 5);
   PrintWhithIndesxMas(ptr2, arr, 5);
+  delete[] ptr1;
+  delete[] ptr2;
 }

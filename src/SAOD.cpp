@@ -260,9 +260,8 @@ void PrintMas(int *A, int n) {
 }
 void PrintWhithIndesxMas(int *index, PhoneNote *arr, int n) {
   for (int i = 0; i < n; i++) {
-    cout << arr[index[i]] << ' ';
+    cout << arr[index[i]] << endl;
   }
-  cout << endl;
 }
 
 void FillRand(int *A, int n) {
