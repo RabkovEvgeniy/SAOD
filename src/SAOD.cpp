@@ -298,3 +298,10 @@ bool PhoneNote::operator<(&PhoneNote note) {
     return this->organizations < note->organizations;
   }
 }
+
+ostream &operator<<(ostream &os, const PhoneNote &note) {
+  cout << "Name: " << note.get_name << endl;
+  cout << "Number: " << note.get_number << endl;
+  cout << "Age: " << note.age << endl;
+  cout << "Organizations " << note.get_organizations << endl;
+}

@@ -50,3 +50,5 @@ private:
   int age;
   string organizations;
 };
+
+ostream &operator<<(ostream &os, const PhoneNote &note);
