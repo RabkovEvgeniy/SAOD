@@ -23,4 +23,4 @@ clean:
 	rm -rf $(PObj)*.*
 	rm -rf $(PBin)*.*
 
--include $(Pobj)SAOD.d $(Pobj)PhoneNote.d
+-include $(Pobj)SAOD.d $(Pobj)PhoneNote.d $(Pobj)main8.d $(Pobj)main7.d

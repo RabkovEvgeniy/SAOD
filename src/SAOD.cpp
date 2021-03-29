@@ -27,7 +27,7 @@ template <typename T> int MaxHeap(T *arr, int L, int R) {
   return arr[L] > arr[max] ? L : max;
 }
 
-template <typename T> int *GetPtrToSortedIndexArr(T *arr, int size) {
+int *GetPtrToSortedIndexArr(PhoneNote *arr, int size) {
   int *ptr = new int[size];
   for (int i = 0; i < size; i++) {
     ptr[i] = i;
@@ -255,6 +255,12 @@ int RunNumber(int *A, int n) {
 void PrintMas(int *A, int n) {
   for (int i = 0; i < n; i++) {
     cout << A[i] << ' ';
+  }
+  cout << endl;
+}
+void PrintWhithIndesxMas(int *index, PhoneNote *arr, int n) {
+  for (int i = 0; i < n; i++) {
+    cout << arr[index[i]] << ' ';
   }
   cout << endl;
 }

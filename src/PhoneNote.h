@@ -31,4 +31,4 @@ private:
   string organizations;
 };
 
-ostream &operator<<(ostream &os, const PhoneNote &note);
+ostream &operator<<(ostream &os, PhoneNote &note);

@@ -1,4 +1,5 @@
 #pragma once
+#include <PhoneNote.h>
 #include <cmath>
 #include <iostream>
 #include <string>
@@ -6,12 +7,13 @@
 
 using namespace std;
 
-template <typename T> int MaxHeap(T *arr, int L, int R);
+template <typename T> int MaxHeap(T *, int, int);
 
-template <typename T> void HeapSort(T *arr, int size);
+template <typename T> void HeapSort(T *, int);
 
-template <typename T> T *GetPtrToSortedIndexArr(T *arr, int size);
+int *GetPtrToSortedIndexArr(PhoneNote *, int);
 
+void PrintWhithIndesxMas(int *, PhoneNote *, int);
 void FillInc(int *, int);
 void FillDec(int *, int);
 int CheckSum(int *, int);
