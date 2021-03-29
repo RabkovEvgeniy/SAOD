@@ -2,8 +2,9 @@
 
 extern int M, C;
 
-void HeapSort(int *arr, int size) {
-  int temp, j;
+template <typename T> void HeapSort(T *arr, int size) {
+  int j;
+  T temp;
   for (int i = size - 1; i > 0; i--) {
     j = MaxHeap(arr, 0, i);
     if (j == i)
@@ -14,7 +15,7 @@ void HeapSort(int *arr, int size) {
   }
 }
 
-int MaxHeap(int *arr, int L, int R) {
+template <typename T> int MaxHeap(T *arr, int L, int R) {
   int max, a, b;
   if (L * 2 + 1 > R)
     return L;
@@ -24,6 +25,25 @@ int MaxHeap(int *arr, int L, int R) {
   b = MaxHeap(arr, L * 2 + 2, R);
   max = arr[a] > arr[b] ? a : b;
   return arr[L] > arr[max] ? L : max;
+}
+
+int *GetPtrToSortedIndexArr(PhoneNote *arr, int size) {
+  int *ptr = new int[size];
+  for (int i = 0; i < size; i++) {
+    ptr[i] = i;
+  }
+  int min;
+  int tmp;
+  for (int i = 0; i < size - 1; i++) {
+    min = i;
+    for (int j = i + 1; j < size; j++)
+      if (arr[ptr[j]] < arr[ptr[min]])
+        min = j;
+    tmp = ptr[i];
+    ptr[i] = ptr[min];
+    ptr[min] = tmp;
+  }
+  return ptr;
 }
 
 int Bsearch2(int *a, int size, int element) {
@@ -235,6 +255,12 @@ int RunNumber(int *A, int n) {
 void PrintMas(int *A, int n) {
   for (int i = 0; i < n; i++) {
     cout << A[i] << ' ';
+  }
+  cout << endl;
+}
+void PrintWhithIndesxMas(int *index, PhoneNote *arr, int n) {
+  for (int i = 0; i < n; i++) {
+    cout << arr[index[i]] << ' ';
   }
   cout << endl;
 }

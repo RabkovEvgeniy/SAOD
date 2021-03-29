@@ -1,11 +1,19 @@
 #pragma once
+#include <PhoneNote.h>
 #include <cmath>
 #include <iostream>
+#include <string>
 #include <time.h>
 
 using namespace std;
-int MaxHeap(int *arr, int L, int R);
-void HeapSort(int *arr, int size);
+
+template <typename T> int MaxHeap(T *, int, int);
+
+template <typename T> void HeapSort(T *, int);
+
+int *GetPtrToSortedIndexArr(PhoneNote *, int);
+
+void PrintWhithIndesxMas(int *, PhoneNote *, int);
 void FillInc(int *, int);
 void FillDec(int *, int);
 int CheckSum(int *, int);
