@@ -1,7 +1,7 @@
 #include <PhoneNote.h>
 #include <SAOD.h>
 int M, C;
-
+using namespace std;
 int main() {
   int *ptr1, *ptr2;
   PhoneNote arr[5];
@@ -20,4 +20,5 @@ int main() {
   PrintWhithIndesxMas(ptr2, arr, 5);
   delete[] ptr1;
   delete[] ptr2;
+
 }

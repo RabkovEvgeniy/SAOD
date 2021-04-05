@@ -12,6 +12,7 @@ template <typename T> void HeapSort(T *arr, int size) {
     temp = arr[i];
     arr[i] = arr[j];
     arr[j] = temp;
+    M=M+3;
   }
 }
 
@@ -19,11 +20,14 @@ template <typename T> int MaxHeap(T *arr, int L, int R) {
   int max, a, b;
   if (L * 2 + 1 > R)
     return L;
-  if (L * 2 + 2 > R)
+  if (L * 2 + 2 > R){
+    C++;
     return arr[L] > arr[R] ? L : R;
+  }
   a = MaxHeap(arr, L * 2 + 1, R);
   b = MaxHeap(arr, L * 2 + 2, R);
   max = arr[a] > arr[b] ? a : b;
+  C+=2;
   return arr[L] > arr[max] ? L : max;
 }
 
