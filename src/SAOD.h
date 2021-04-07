@@ -7,9 +7,9 @@
 
 using namespace std;
 
-template <typename T> int MaxHeap(T *, int, int);
+int MaxHeap(int *, int, int);
 
-template <typename T> void HeapSort(T *, int);
+void HeapSort(int *, int);
 
 int *GetPtrToSortedIndexArr(PhoneNote *, int);
 
@@ -30,3 +30,4 @@ int Sedfvig(int i);
 int count_of_step(int size, bool flag);
 int Bsearch1(int *a, int size, int element);
 int Bsearch2(int *a, int size, int element);
+
