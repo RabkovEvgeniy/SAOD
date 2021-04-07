@@ -7,7 +7,7 @@
 
 using namespace std;
 
-int MaxHeap(int *, int, int);
+void Heapfi(int *, int, int);
 
 void HeapSort(int *, int);
 

@@ -3,33 +3,52 @@
 extern int M, C;
 
 void HeapSort(int *arr, int size) {
-   M=C=0;
-  int j;
-  int temp;
-  for (int i = size - 1; i > 0; i--) {
-    j = MaxHeap(arr, 0, i);
-    if (j == i)
-      continue;
-    temp = arr[i];
-    arr[i] = arr[j];
-    arr[j] = temp;
-    M=M+3;
+  int deep = log2(size+1);
+  int a;
+
+  for (int i = deep-1; i >= 0; i--)
+  {
+    a = pow(2,i);
+    for (int j = a-1; j < 2*a-1; j++)
+    {
+      Heapfi(arr,j,size);
+    }
   }
+
+  M=C=0;
+  
+  for (int i = size-1; i > 0; i--)
+  {
+    M+=3;
+    swap(arr[i],arr[0]);
+    Heapfi(arr,0,i);
+  }
+  
 }
 
-int MaxHeap(int *arr, int L, int R) {
-  int max, a, b;
-  if (L * 2 + 1 > R)
-    return L;
-  if (L * 2 + 2 > R){
-    C++;
-    return arr[L] > arr[R] ? L : R;
+void Heapfi(int *arr, int root, int size) {
+  int lorgest = root;
+  int r = root*2+2;
+  int l = root*2+1;
+
+  C++;
+  if(r<size && arr[r]>arr[lorgest])
+  {
+    lorgest = r;
   }
-  a = MaxHeap(arr, L * 2 + 1, R);
-  b = MaxHeap(arr, L * 2 + 2, R);
-  max = arr[a] > arr[b] ? a : b;
-  C+=2;
-  return arr[L] > arr[max] ? L : max;
+
+  C++;
+  if(l<size && arr[l]>arr[lorgest])
+  {
+    lorgest = l;
+  } 
+
+  if(lorgest!=root)
+  {
+    M+=3;
+    swap(arr[lorgest],arr[root]);
+    Heapfi(arr,lorgest,size);
+  }
 }
 
 int *GetPtrToSortedIndexArr(PhoneNote *arr, int size) {

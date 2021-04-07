@@ -4,6 +4,7 @@ using namespace std;
 
 int main(){
     int i;
+    srand(time(0));
     M=C=0;
        cout << "n\t\t\tHeap Sort" << endl;
        cout<<"\tint\tdec\trand"<<endl;
@@ -24,11 +25,11 @@ int main(){
         delete[]a;
     }
     cout << endl;
-    i = 5000;
+    i = 1000000;
     int* a = new int[i];
         cout << i << "\t";
         FillRand(a, i);
-        InsertSort(a, i);
+        ShellSort(a, i,1);
         cout << M + C << "\t";
         FillRand(a, i);
         HeapSort(a, i);
