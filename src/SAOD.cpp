@@ -3,6 +3,7 @@
 extern int M, C;
 
 void HeapSort(int *arr, int size) {
+   M=C=0;
   int j;
   int temp;
   for (int i = size - 1; i > 0; i--) {
