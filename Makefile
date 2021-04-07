@@ -3,8 +3,8 @@ CFlags = -Wall -MMD -I src
 PObj = obj/
 PSrc = src/
 PBin = bin/
-EXEC = out
-Target = $(PBin)main7.$(EXEC) $(PBin)main8.$(EXEC)
+EXEC = exe   
+Target = $(PBin)main9.$(EXEC) $(PBin)main8.$(EXEC) $(PBin)main7.$(EXEC)
 
 all: $(Target)
 
@@ -23,4 +23,4 @@ clean:
 	rm -rf $(PObj)*.*
 	rm -rf $(PBin)*.*
 
--include $(Pobj)SAOD.d $(Pobj)PhoneNote.d $(Pobj)main8.d $(Pobj)main7.d
+-include $(Pobj)SAOD.d $(Pobj)PhoneNote.d $(Pobj)main8.d $(Pobj)main7.d $(Pobj)main9.d

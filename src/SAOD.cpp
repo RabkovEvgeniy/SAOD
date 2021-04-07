@@ -2,9 +2,9 @@
 
 extern int M, C;
 
-template <typename T> void HeapSort(T *arr, int size) {
+void HeapSort(int *arr, int size) {
   int j;
-  T temp;
+  int temp;
   for (int i = size - 1; i > 0; i--) {
     j = MaxHeap(arr, 0, i);
     if (j == i)
@@ -16,7 +16,7 @@ template <typename T> void HeapSort(T *arr, int size) {
   }
 }
 
-template <typename T> int MaxHeap(T *arr, int L, int R) {
+int MaxHeap(int *arr, int L, int R) {
   int max, a, b;
   if (L * 2 + 1 > R)
     return L;
