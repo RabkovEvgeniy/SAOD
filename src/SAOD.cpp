@@ -1,6 +1,42 @@
 #include <SAOD.h>
 
 extern int M, C;
+void Heap2(int* a, int i, int n) {
+    int max = i;
+
+    while (true)
+    {
+        int j = 2 * i + 1;
+      if (j >= n) break;
+        C++;
+        if (j<n && a[j]>a[max])
+            max = j;
+        j++;
+        if (j >= n) break;
+        C++;
+        if (j<n && a[j]>a[max])
+            max = j;
+        if (max == i) break;
+        else {
+            M += 3;
+            swap(a[max], a[i]);
+            i = max;
+        }
+    }
+   
+}
+
+void HeapSort2(int* a, int n) {
+    M = C = 0;
+    for (int i = n / 2; i >= 0; i--) {
+        Heap2(a, i, n);
+    }
+    for (int i = n - 1; i >= 1; i--) {
+        M += 3;
+        swap(a[0], a[i]);
+        Heap2(a, 0, i);
+    }
+}
 
 void HeapSort(int *arr, int size) {
   int deep = log2(size+1);

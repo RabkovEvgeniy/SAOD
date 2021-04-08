@@ -3,8 +3,8 @@ int M, C;
 using namespace std;
 
 int main(){
-    int i;
-    srand(time(0));
+    int i;  
+      srand(time(0));
     M=C=0;
        cout << "n\t\t\tHeap Sort" << endl;
        cout<<"\tint\tdec\trand"<<endl;

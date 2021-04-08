@@ -6,7 +6,8 @@
 #include <time.h>
 
 using namespace std;
-
+void Heap2(int* a, int i, int n);
+void HeapSort2(int* a, int n);
 void Heapfi(int *, int, int);
 
 void HeapSort(int *, int);
