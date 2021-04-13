@@ -1,65 +1,54 @@
 #include <SAOD.h>
 
 extern int M, C;
-void Heap2(int* a, int i, int n) {
-    int max = i;
-
+void Heap2(int* a, int L, int n) {
+    int x = a[L];
+    M++;
+    int i = L;
     while (true)
     {
-        int j = 2 * i + 1;
-      if (j >= n) break;
+        int j = 2 * i ;
+        if (j > n) break;
         C++;
-        if (j<n && a[j]>a[max])
-            max = j;
-        j++;
-        if (j >= n) break;
+        if (j<n && a[j]<=a[j+1]) j++;
         C++;
-        if (j<n && a[j]>a[max])
-            max = j;
-        if (max == i) break;
-        else {
-            M += 3;
-            swap(a[max], a[i]);
-            i = max;
-        }
+        if(x >= a[j]) break;
+        a[i]=a[j];
+        M++;
+        i=j;
     }
+    a[i]=x;
+    M++;
+
    
 }
 
 void HeapSort2(int* a, int n) {
     M = C = 0;
-    for (int i = n / 2; i >= 0; i--) {
-        Heap2(a, i, n);
-    }
-    for (int i = n - 1; i >= 1; i--) {
-        M += 3;
-        swap(a[0], a[i]);
-        Heap2(a, 0, i);
-    }
-}
-
-void HeapSort(int *arr, int size) {
-  int deep = log2(size+1);
-  int a;
-
-  for (int i = deep-1; i >= 0; i--)
+  int L= n/2;
+  while (L>0)
   {
-    a = pow(2,i);
-    for (int j = a-1; j < 2*a-1; j++)
-    {
-      Heapfi(arr,j,size);
-    }
+    Heap2(a,L,n);
+    L--;
   }
-
-  M=C=0;
-  
-  for (int i = size-1; i > 0; i--)
+  int R=n;
+  while (R>1)
   {
     M+=3;
-    swap(arr[i],arr[0]);
-    Heapfi(arr,0,i);
+    swap(a[1],a[R]);
+    R--;
+    Heap2(a,1,R);
   }
-  
+}
+
+void HeapSort(int *a, int size) {
+  M=C=0;
+  for (int i = 1; i < size; ++i) 
+        Heap2(a, size, i);
+    for (int i = size-1; i > 1; i--) {
+        swap(a[1], a[i]);
+        Heapfi(a, i-1, 1);
+    } 
 }
 
 void Heapfi(int *arr, int root, int size) {
@@ -67,18 +56,24 @@ void Heapfi(int *arr, int root, int size) {
   int r = root*2+2;
   int l = root*2+1;
 
-  C++;
-  if(r<size && arr[r]>arr[lorgest])
+  if(l<size)
   {
-    lorgest = r;
-  }
+    if(arr[l]>arr[lorgest])
+    {
+      C++;
+      lorgest = l;
+    }
 
-  C++;
-  if(l<size && arr[l]>arr[lorgest])
-  {
-    lorgest = l;
+    if(r<size)
+    {
+      C++;
+      if (arr[r]>arr[lorgest])
+      {
+        lorgest = r;
+      }
+    }
+
   } 
-
   if(lorgest!=root)
   {
     M+=3;
