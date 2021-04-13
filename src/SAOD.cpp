@@ -1,6 +1,25 @@
 #include <SAOD.h>
 
 extern int M, C;
+void QuickSort(int *a,int L, int R){
+  int x = a[L];
+  M++;
+  int i = L;
+  int j = R;
+  while (i<=j)
+  {
+    while (a[i]<x) {i++; C++;}
+    while(a[j]>x) {j--;C++;}
+    if(i<=j){
+      M+=3;
+      swap(a[i],a[j]);
+      i++;
+      j--;
+    }  
+  }
+  if(L<j) QuickSort(a,L,j);
+  if(i<R) QuickSort(a,i,R);
+}
 void Heap2(int* a, int L, int n) {
     int x = a[L];
     M++;
@@ -19,8 +38,6 @@ void Heap2(int* a, int L, int n) {
     }
     a[i]=x;
     M++;
-
-   
 }
 
 void HeapSort2(int* a, int n) {

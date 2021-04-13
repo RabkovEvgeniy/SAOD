@@ -4,7 +4,7 @@ PObj = obj/
 PSrc = src/
 PBin = bin/
 EXEC = exe   
-Target = $(PBin)main9.$(EXEC) $(PBin)main8.$(EXEC) $(PBin)main7.$(EXEC)
+Target = $(PBin)main9.$(EXEC) $(PBin)main8.$(EXEC) $(PBin)main7.$(EXEC) $(PBin)main10.$(EXEC)
 
 all: $(Target)
 

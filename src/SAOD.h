@@ -6,6 +6,7 @@
 #include <time.h>
 
 using namespace std;
+void QuickSort(int *a,int L, int R);
 void Heap2(int* a, int i, int n);
 void HeapSort2(int* a, int n);
 void Heapfi(int *, int, int);
