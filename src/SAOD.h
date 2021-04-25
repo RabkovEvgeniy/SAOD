@@ -6,6 +6,65 @@
 #include <time.h>
 
 using namespace std;
+struct Node
+{
+    int var;
+    Node* next;
+};
+
+class List
+{
+private:
+    Node* head; 
+public:
+    List() 
+    {
+        head = NULL; 
+    }
+    void add(int var)
+    {
+        Node* p = new Node;
+        p->var = var;
+        p->next = head;
+        head = p;
+    }
+    void printList()
+    {
+        Node* current = head;
+        while (current)
+        {
+            cout << current->var << ' ';
+            current = current->next;
+        }
+    }
+    int CheckSumS() {
+        Node* current = head;
+        int sum = 0;
+        while (current)
+        {
+            sum += current->var;
+            current = current->next;
+        }
+        return sum;
+    }
+    int RunNumberS() {
+        Node* current = head;
+        int s = 1;
+        while (current)
+        {
+            if (current->next != NULL) {
+                if (current->var > (current->next)->var) s++;
+            }
+           
+            current = current->next;
+        }
+        return s;
+    }
+    
+};
+void FillDecS(List* lst, int size);
+void FillRandS(List* lst, int size);
+void FillIncS(List* lst, int size);
 void QuickSort(int *a,int L, int R);
 void Heap2(int* a, int i, int n);
 void HeapSort2(int* a, int n);

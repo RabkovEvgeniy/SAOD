@@ -9,7 +9,7 @@ int main(){
     cout << "n\t\t\tHeap Sort" << endl;
     cout<<"\tinc\tdec\trand"<<endl;
 
-    for (i = 100; i < 501; i += 100)
+    for (i = 100; i < 599; i += 100)
     {
         int* a = new int[i+1];
         cout << i << "\t";

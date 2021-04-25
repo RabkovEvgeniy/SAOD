@@ -1,8 +1,31 @@
 #include <SAOD.h>
-
+using namespace std;
 extern int M, C;
+void FillIncS(List* lst, int size) {
+    for  (int i = size-1;  i >=0 ; i--)
+    {
+        lst->add(i);
+    }
+    
+}
+void FillDecS(List* lst, int size) {
+    for (int i = 0; i < size; i++)
+    {
+        lst->add(i);
+    }
+
+}
+void FillRandS(List* lst, int size) {
+    for (int i = 0; i <size; i++)
+    {
+        int s = rand() % size;
+        lst->add(s);
+    }
+
+}
+
 void QuickSort(int *a,int L, int R){
-  int x = a[L];
+  int x = a[(L+R)/2];
   M++;
   int i = L;
   int j = R;
@@ -29,9 +52,9 @@ void Heap2(int* a, int L, int n) {
         int j = 2 * i ;
         if (j > n) break;
         C++;
-        if (j<n && a[j]<=a[j+1]) j++;
+        if (j<n && a[j]>=a[j+1]) j++;
         C++;
-        if(x >= a[j]) break;
+        if(x <= a[j]) break;
         a[i]=a[j];
         M++;
         i=j;
